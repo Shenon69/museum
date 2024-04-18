@@ -18,8 +18,6 @@
       fetchpriority="high"
     />
 
-    <script src="script.js" defer></script>
-
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -35,20 +33,20 @@
       />
     </h1>
     <main>
+        {{ range . }}
       <article>
-        <h2>Life in Ancient Greek</h2>
+        <h2>{{.Title}}</h2>
         <p>
-          Uncover the world of ancient Greece through the sculptures, tools, and
-          jewelry found in ruins from over 2000 years ago that have been
-          unearthed through modern science and technology.
+            {{ .Description }}
         </p>
         <img
-          src="gallery/ancient-greece.png"
+          src="gallery/{{ .Image }}"
           fetchpriority="high"
           decoding="sync"
           alt="Ancient Greek artifacts"
         />
       </article>
+      {{ end}}
     </main>
   </body>
 </html>
